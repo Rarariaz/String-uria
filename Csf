@@ -1,0 +1,14 @@
+function CameraShaker()
+	task.spawn(function()
+		local Camera = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
+		while wait() do
+			pcall(function()
+				if _G.Settings.Configs["Camera Shaker"] then
+					Camera.CameraShakeInstance.CameraShakeState.Inactive = 0
+				else
+					Camera.CameraShakeInstance.CameraShakeState.Inactive = 3
+				end
+			end)
+		end
+	end)
+end
