@@ -1,0 +1,13 @@
+function DisabledDamage()
+	task.spawn(function()
+		while wait() do
+			pcall(function()
+				if _G.Settings.Configs["Disabled Damage"] then
+					game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = false
+				else
+					game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = true
+				end
+			end)
+		end
+	end)
+end
